@@ -192,7 +192,7 @@ const useGetAccounts = (root_type?: ('Asset' | 'Liability' | 'Equity' | 'Income'
     const { data, isLoading, error, mutate } = useFrappeGetDocList<Account>("Account", {
         fields: ["name", "root_type", "report_type", "account_type", "account_currency", "parent_account"],
         filters: [["is_group", "=", 0], ["disabled", "=", 0], ["company", "=", company ?? currentCompany]],
-        limit: 1000,
+        limit: 5000,
         orderBy: {
             "field": "root_type",
             // @ts-expect-error - we can pass in additional fields to orderBy
